@@ -56,6 +56,20 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             square_root(-1)
 
+    def run_unit_tests():
+        import unittest
+        loader = unittest.TestLoader()
+        suite = loader.loadTestsFromModule(__import__("test_calculator"))
+        runner = unittest.TextTestRunner(verbosity=0)
+
+        result = runner.run(suite)
+
+        if result.wasSuccessful():
+            print("All tests passed!")
+        else:
+            print("Tests failed.")
+
+
 
 if __name__ == "__main__":
     unittest.main()
